@@ -1,3 +1,5 @@
+**WARNING: This license (CC BY-NC 4.0) restricts use to non-commercial purposes. Ensure your portfolio complies with these terms.**
+
 Attribution-NonCommercial 4.0 International
 
 =======================================================================
