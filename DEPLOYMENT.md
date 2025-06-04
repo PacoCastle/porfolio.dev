@@ -40,8 +40,8 @@ This guide outlines the steps to deploy your Astro site to AWS using S3 for stat
 First, clone your project repository to your local machine.  For example:
 
 ```bash
-git clone https://github.com/your-username/your-astro-project.git
-cd your-astro-project
+git clone https://github.com/PacoCastle/porfolio.dev.git
+cd porfolio.dev
 ```
 
 If you are working on a development branch, switch to it:
