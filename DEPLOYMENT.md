@@ -1,4 +1,4 @@
-# Deploymente to AWS Guide
+# Deployment to AWS Guide
 
 This guide outlines the steps to deploy your Astro site to AWS using S3 for static website hosting and CloudFront for CDN.
 
