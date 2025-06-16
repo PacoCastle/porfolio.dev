@@ -1,0 +1,22 @@
+{
+     "family": "porfolio-cli-task",
+     "networkMode": "awsvpc",
+     "requiresCompatibilities": ["FARGATE"],
+     "executionRoleArn": "arn:aws:iam::277426079602:role/ecsTaskExecutionRole",
+     "cpu": "256",
+     "memory": "512",
+     "containerDefinitions": [
+       {
+         "name": "porfolio-cli-container",
+         "image": "277426079602.dkr.ecr.us-east-2.amazonaws.com/porfolio-repository:latest",
+         "portMappings": [
+           {
+             "containerPort": 3000,
+             "hostPort": 3000,
+             "protocol": "tcp"
+           }
+         ],
+         "essential": true
+       }
+     ]
+   }
