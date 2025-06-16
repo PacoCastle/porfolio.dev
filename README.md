@@ -25,3 +25,36 @@
 </a>
 
 <p></p>
+
+# Astro Portfolio
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/PacoCastle/porfolio.dev.git
+cd porfolio.dev
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Build the Project
+
+```bash
+npm run build
+```
+
+### 4. Run Locally
+
+```bash
+npm run dev
+```
+
+## 📦 Deployment
+
+Deployment instructions can be found in [DEPLOYMENT.md](./DEPLOYMENT.md).
