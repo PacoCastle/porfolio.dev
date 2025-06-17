@@ -4,28 +4,37 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import AwsS3 from "./icons/AwsS3.astro"
+import Netlify from "./icons/Netlify.astro"
+import AwsECS from "./icons/AwsECS.astro"
+
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
+  AWSECS: {
+    name: "Aws ECS",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: AwsECS,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
+  NETLIFY: {
+    name: "Netlify",
     class: "bg-[#003159] text-white",
-    icon: Tailwind,
+    icon: Netlify,
+  },
+  AWSS3: {
+    name: "S3 Bucket",
+    class: "bg-black text-white",
+    icon: AwsS3,
   },
 }
 const PROJECTS = [
   {
-    title: "To be Added...",
+    title: "Porfolio DeployFlow",
     description:
-      "To be Added...................................",
-    link: "https://github.com/PacoCastle/",
-    github: "https://github.com/PacoCastle",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Astro-based portfolio project designed for effortless deployment across Netlify, AWS S3 Bucket and AWS ECS Cluster cloud platforms, featuring clear deployment guides and optimized build configurations.",
+    link: "https://paco-castle-portfolio.netlify.app/",
+    github: "https://github.com/PacoCastle/porfolio.dev",
+    image: "/projects/Porfolio.png",
+    tags: [TAGS.NETLIFY, TAGS.AWSS3, TAGS.AWSECS],
   },
 ]
 ---
