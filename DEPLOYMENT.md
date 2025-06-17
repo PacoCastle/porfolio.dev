@@ -145,7 +145,7 @@ cd porfolio.dev
 If you are working on a development branch, switch to it:
 
 ```bash
-git checkout develop
+git checkout development
 ```
 
 ### 2. Install Dependencies
@@ -170,7 +170,7 @@ This command generates a `dist` directory (or the directory you configured in yo
 
 1. Go to the AWS Management Console and open the S3 service.
 2. Click "Create bucket".
-3. Enter a globally unique bucket name (e.g., `your-astro-site-name`).
+3. Enter a globally unique bucket name (e.g., `s3-porfolio`).
 4. Choose the AWS Region closest to your users.
 5. Under "Object Ownership", choose "ACLs disabled (recommended)".
 6. Under "Block Public Access settings for this bucket", uncheck "Block all public access". Acknowledge the warning.
@@ -228,26 +228,6 @@ aws s3 sync dist s3://your-astro-site-name --delete
 
 Replace `your-astro-site-name` with your bucket name. The `--delete` flag removes files from the bucket that are not present in the `dist` directory.
 
-### 8. (Optional) Configure CloudFront CDN
-
-Using CloudFront provides caching, improved performance, and SSL/TLS encryption.
-
-1.  Go to the CloudFront service in the AWS Management Console.
-2.  Click "Create distribution".
-3.  Under "Origin domain", enter the S3 bucket website endpoint URL you noted earlier (e.g., `your-astro-site-name.s3-website-us-east-1.amazonaws.com`). **Do not select the bucket from the dropdown; enter the website endpoint.**
-4.  Under "Origin access", select "Legacy access identities".
-5.  Choose "Create a new OAC" and give it a name.
-6.  Choose "Yes, update bucket policy".
-7.  Under "Default cache behavior", select "Redirect HTTP to HTTPS".
-8.  Under "Distribution settings", enter any "Alternate domain names (CNAMEs)" you want to use (e.g., `www.yourdomain.com`). You'll need to configure your DNS records later to point to the CloudFront distribution.
-9.  If you entered CNAMEs, under "Custom SSL certificate", request or import a certificate from AWS Certificate Manager (ACM). The certificate must be in the `us-east-1` region.
-10. Click "Create distribution".
-
-### 9. (Optional) Configure DNS (If Using CloudFront with a Custom Domain)
-
-1.  Go to your DNS provider (e.g., Route 53, GoDaddy, Namecheap).
-2.  Create a CNAME record that points your custom domain (e.g., `www.yourdomain.com`) to the CloudFront distribution's domain name (e.g., `d111111abcdef8.cloudfront.net`).
-
 ### Summary of Steps
 
 1.  Clone the Repository: `git clone <repository-url>`
@@ -256,16 +236,8 @@ Using CloudFront provides caching, improved performance, and SSL/TLS encryption.
 4.  Create S3 Bucket: Configure for static website hosting.
 5.  Set S3 Bucket Permissions: Add a bucket policy to allow public read access.
 6.  Upload Files to S3: `aws s3 sync dist s3://your-astro-site-name --delete`
-7.  Create CloudFront Distribution (Optional): Configure to use the S3 bucket as the origin.
-8.  Configure DNS (Optional): Create a CNAME record pointing to the CloudFront distribution.
 
-This setup provides a scalable and cost-effective way to host your Astro site on AWS. Remember to invalidate the CloudFront cache after deployments to ensure users get the latest version of your site. You can do this from the AWS console or via the AWS CLI.
-
-```bash
-aws cloudfront create-invalidation --distribution-id <your-distribution-id> --paths "/*"
-```
-
-Replace `<your-distribution-id>` with your CloudFront distribution ID.
+This setup provides a scalable and cost-effective way to host your Astro site on AWS.
 
 ---
 
